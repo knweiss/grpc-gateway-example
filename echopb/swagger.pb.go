@@ -20,6 +20,7 @@ swagger = `{
   "paths": {
     "/v1/echo": {
       "post": {
+        "summary": "Echo returns the received message back to the caller.",
         "operationId": "Echo",
         "responses": {
           "200": {
@@ -52,7 +53,8 @@ swagger = `{
         "value": {
           "type": "string"
         }
-      }
+      },
+      "description": "EchoMessage is the message text of an Echo() request and response."
     }
   }
 }

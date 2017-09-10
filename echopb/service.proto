@@ -3,12 +3,14 @@ package echopb;
 
 import "google/api/annotations.proto";
 
+// EchoMessage is the message text of an Echo() request and response.
 message EchoMessage {
  string value = 1;
 }
 
 service EchoService {
-  rpc Echo(EchoMessage) returns (EchoMessage) {
+  // Echo returns the received message back to the caller.
+  rpc Echo(EchoMessage) returns (EchoMessage)  {
     option (google.api.http) = {
       post: "/v1/echo"
       body: "*"

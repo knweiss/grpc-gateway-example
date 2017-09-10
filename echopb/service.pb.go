@@ -33,6 +33,7 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
+// EchoMessage is the message text of an Echo() request and response.
 type EchoMessage struct {
 	Value string `protobuf:"bytes,1,opt,name=value" json:"value,omitempty"`
 }
@@ -64,6 +65,7 @@ const _ = grpc.SupportPackageIsVersion4
 // Client API for EchoService service
 
 type EchoServiceClient interface {
+	// Echo returns the received message back to the caller.
 	Echo(ctx context.Context, in *EchoMessage, opts ...grpc.CallOption) (*EchoMessage, error)
 }
 
@@ -87,6 +89,7 @@ func (c *echoServiceClient) Echo(ctx context.Context, in *EchoMessage, opts ...g
 // Server API for EchoService service
 
 type EchoServiceServer interface {
+	// Echo returns the received message back to the caller.
 	Echo(context.Context, *EchoMessage) (*EchoMessage, error)
 }
 
